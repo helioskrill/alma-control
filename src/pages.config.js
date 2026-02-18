@@ -47,24 +47,24 @@
  *
  * The mainPage value must match a key in the PAGES object exactly.
  */
+import Anomalies from './pages/Anomalies';
 import Dashboard from './pages/Dashboard';
+import DevicePanel from './pages/DevicePanel';
+import HistoryView from './pages/HistoryView';
 import ManageData from './pages/ManageData';
 import OperatorDetail from './pages/OperatorDetail';
 import PedidosAtrasados from './pages/PedidosAtrasados';
-import DevicePanel from './pages/DevicePanel';
-import HistoryView from './pages/HistoryView';
-import Anomalies from './pages/Anomalies';
 import __Layout from './Layout.jsx';
 
 
 export const PAGES = {
+    "Anomalies": Anomalies,
     "Dashboard": Dashboard,
+    "DevicePanel": DevicePanel,
+    "HistoryView": HistoryView,
     "ManageData": ManageData,
     "OperatorDetail": OperatorDetail,
     "PedidosAtrasados": PedidosAtrasados,
-    "DevicePanel": DevicePanel,
-    "HistoryView": HistoryView,
-    "Anomalies": Anomalies,
 }
 
 export const pagesConfig = {
