@@ -58,6 +58,27 @@ export default function Dashboard() {
 
   const isLoading = loadingOps || loadingEvents;
 
+  // Notifications for inactive operators
+  const notifiedRef = useRef(new Set());
+  useEffect(() => {
+    if (isLoading || !filters.autoRefresh) return;
+    summaries.forEach((s) => {
+      if ((s.status === "red" || s.status === "yellow") && s.gapCount > 0 && !notifiedRef.current.has(s.operatorId)) {
+        const maxGapMin = Math.round(s.maxGap);
+        const msg = s.status === "red"
+          ? `🔴 ${s.operatorName}: inactividad de ${maxGapMin} min detectada`
+          : `🟡 ${s.operatorName}: posible inactividad (${maxGapMin} min)`;
+        toast.warning(msg, { duration: 8000, position: "top-right" });
+        notifiedRef.current.add(s.operatorId);
+      }
+    });
+  }, [summaries, isLoading, filters.autoRefresh]);
+
+  // Reset notified set when date/filters change
+  useEffect(() => {
+    notifiedRef.current = new Set();
+  }, [filters.date, filters.startTime, filters.endTime, filters.threshold]);
+
   return (
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
