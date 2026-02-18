@@ -81,6 +81,7 @@ export default function Dashboard() {
 
   return (
     <div className="space-y-6">
+      <Toaster richColors closeButton />
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold text-gray-900 tracking-tight">Control de Actividad PDA</h1>
