@@ -258,8 +258,8 @@ export default function ProxyInstaller() {
               <Server className="w-4 h-4" /> Proxy Local ALMA → Base44
             </h2>
             <p className="text-sm text-indigo-700 mt-1 max-w-xl">
-              Un pequeño servicio que corre en un PC de oficina con acceso a SRV2019.
-              Lee SQL Server y entrega los eventos normalizados a Base44. Nada queda expuesto en internet.
+              El proxy corre directamente en <strong>SRV2019</strong>, junto al SQL Server.
+              Conexión local (localhost), sin saltos de red intermedios. Solo necesita puerto 8099 abierto hacia fuera.
             </p>
           </div>
           <Badge className="bg-indigo-100 text-indigo-700 border-indigo-200 self-start shrink-0">Python / FastAPI</Badge>
