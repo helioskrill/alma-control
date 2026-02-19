@@ -75,6 +75,31 @@ export default function DashboardFilters({ filters, onFilterChange }) {
         </div>
       </div>
 
+      {/* Activity preset row */}
+      <div className="flex flex-wrap items-center gap-3 pt-1 border-t border-gray-50">
+        <Activity className="w-3.5 h-3.5 text-gray-400 shrink-0" />
+        <span className="text-xs font-semibold uppercase tracking-wider text-gray-400 shrink-0">Actividad</span>
+        <div className="flex flex-wrap gap-1.5">
+          {ACTIVITY_PRESETS.map((preset) => {
+            const active = (filters.activityPreset ?? DEFAULT_ACTIVITY_PRESET) === preset.id;
+            return (
+              <button
+                key={preset.id}
+                onClick={() => onFilterChange({ ...filters, activityPreset: preset.id })}
+                title={preset.description}
+                className={`px-3 py-1 rounded-full text-xs font-medium border transition-all ${
+                  active
+                    ? "bg-indigo-600 text-white border-indigo-600"
+                    : "bg-white text-gray-500 border-gray-200 hover:border-indigo-300"
+                }`}
+              >
+                {preset.label}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
       {/* Auto-refresh row */}
       <div className="flex items-center gap-4 pt-1 border-t border-gray-50">
         <RefreshCw className="w-3.5 h-3.5 text-gray-400" />
