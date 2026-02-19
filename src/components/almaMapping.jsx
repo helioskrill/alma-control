@@ -2,9 +2,23 @@
  * almaMapping.js
  * 
  * Diccionario central ALMA → Base44.
- * Fuente: com.incod.AlonsoMercaderPDA v4.13.3
+ * Fuente: com.incod.AlonsoMercaderPDA APK (Alonso Mercader)
  * 
- * Módulos APK (en castellano) → código interno estable → patrones de operation_type
+ * Activities identificadas en el APK:
+ *   MenuActivity                          → menú principal
+ *   ConfigActivity                        → CONFIG
+ *   EntradasActivity / EntradasLista*     → ENTRY
+ *   ImprimirActivity / ImprimirLista*     → PRINT
+ *   InventariosActivity / InventariosLista* / InventariosSeleccion* → INVENTORY
+ *   LoginActivity                         → AUTH
+ *   MermasActivity                        → WASTE
+ *   MovimientosActivity (menú)            → –
+ *   MovimientosBobinaActivity             → MOVE_BOBINA
+ *   MovimientosLoteActivity               → MOVE_LOTE
+ *   PickingActivity / Picking1_ / Picking2_ / Picking3_ → PICKING
+ *   TarasActivity                         → TARE
+ * 
+ * Endpoint API: http://192.168.1.74:8050/ws/api/senddata
  */
 
 // ─── Categorías canónicas (códigos internos estables) ────────────────────────
