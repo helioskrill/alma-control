@@ -3,11 +3,12 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
-import { Calendar, Clock, AlertTriangle, RefreshCw } from "lucide-react";
+import { Calendar, Clock, AlertTriangle, RefreshCw, Activity } from "lucide-react";
+import { ACTIVITY_PRESETS, DEFAULT_ACTIVITY_PRESET } from "../almaMapping";
 
 /**
  * Props:
- *   filters        — { date, startTime, endTime, threshold, autoRefresh, refreshInterval }
+ *   filters        — { date, startTime, endTime, threshold, autoRefresh, refreshInterval, activityPreset }
  *   onFilterChange — (newFilters) => void
  */
 export default function DashboardFilters({ filters, onFilterChange }) {
