@@ -103,17 +103,20 @@ export function computeOperatorSummary(operator, events, date, startTime, endTim
 
   const { ordersPerHour, avgIntervalMin } = computeCadence(opEvents);
 
+  const { ordersPerHour, avgIntervalMin } = computeCadence(opEvents);
+
   return {
-    operatorId:    operator.id,
-    operatorName:  operator.name,
-    totalOrders:   opEvents.length,
-    firstClose:    opEvents[0].timestamp,
-    lastClose:     opEvents[opEvents.length - 1].timestamp,
+    operatorId:      operator.id,
+    operatorName:    operator.name,
+    totalOrders:     allOpEvents.length,       // total all events
+    activityEvents:  opEvents.length,           // events that count for gap detection
+    firstClose:      opEvents[0].timestamp,
+    lastClose:       opEvents[opEvents.length - 1].timestamp,
     maxGap,
-    gapCount:      gaps.length,
+    gapCount:        gaps.length,
     gaps,
-    events:        opEvents,
-    status:        deriveStatus(gaps, maxGap, thresholdMinutes),
+    events:          allOpEvents,
+    status:          deriveStatus(gaps, maxGap, thresholdMinutes),
     ordersPerHour,
     avgIntervalMin,
   };
@@ -121,10 +124,11 @@ export function computeOperatorSummary(operator, events, date, startTime, endTim
 
 /**
  * Compute per-operator summaries for ALL operators (used by Dashboard / heatmap).
+ * @param {string[]} [activityCategories] - categories that count as activity.
  */
-export function computeOperatorSummaries(operators, events, date, startTime, endTime, thresholdMinutes) {
+export function computeOperatorSummaries(operators, events, date, startTime, endTime, thresholdMinutes, activityCategories) {
   return operators.map((op) =>
-    computeOperatorSummary(op, events, date, startTime, endTime, thresholdMinutes)
+    computeOperatorSummary(op, events, date, startTime, endTime, thresholdMinutes, activityCategories)
   );
 }
 
