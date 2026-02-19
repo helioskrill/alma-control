@@ -69,17 +69,18 @@ export function computeOperatorSummary(operator, events, date, startTime, endTim
 
   if (opEvents.length === 0) {
     return {
-      operatorId:    operator.id,
-      operatorName:  operator.name,
-      totalOrders:   0,
-      firstClose:    null,
-      lastClose:     null,
-      maxGap:        null,
-      gapCount:      0,
-      gaps:          [],
-      events:        [],
-      status:        "none",
-      ordersPerHour: null,
+      operatorId:     operator.id,
+      operatorName:   operator.name,
+      totalOrders:    allOpEvents.length,
+      activityEvents: 0,
+      firstClose:     null,
+      lastClose:      null,
+      maxGap:         null,
+      gapCount:       0,
+      gaps:           [],
+      events:         allOpEvents,
+      status:         "none",
+      ordersPerHour:  null,
       avgIntervalMin: null,
     };
   }
