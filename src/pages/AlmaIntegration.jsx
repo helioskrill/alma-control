@@ -7,7 +7,8 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import {
   Table, TableBody, TableCell, TableHead, TableHeader, TableRow,
 } from "@/components/ui/table";
-import { Upload, Download, Info, Zap, Database, Globe, Trash2 } from "lucide-react";
+import { Upload, Download, Info, Zap, Database, Globe, Trash2, Server } from "lucide-react";
+import ProxyInstaller from "../components/integration/ProxyInstaller";
 
 // ─── Diccionario categorías ───────────────────────────────────────────────────
 const CATEGORY_COLORS = {

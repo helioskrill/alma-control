@@ -47,6 +47,7 @@
  *
  * The mainPage value must match a key in the PAGES object exactly.
  */
+import AlmaIntegration from './pages/AlmaIntegration';
 import Anomalies from './pages/Anomalies';
 import Dashboard from './pages/Dashboard';
 import DevicePanel from './pages/DevicePanel';
@@ -54,11 +55,11 @@ import HistoryView from './pages/HistoryView';
 import ManageData from './pages/ManageData';
 import OperatorDetail from './pages/OperatorDetail';
 import PedidosAtrasados from './pages/PedidosAtrasados';
-import AlmaIntegration from './pages/AlmaIntegration';
 import __Layout from './Layout.jsx';
 
 
 export const PAGES = {
+    "AlmaIntegration": AlmaIntegration,
     "Anomalies": Anomalies,
     "Dashboard": Dashboard,
     "DevicePanel": DevicePanel,
@@ -66,7 +67,6 @@ export const PAGES = {
     "ManageData": ManageData,
     "OperatorDetail": OperatorDetail,
     "PedidosAtrasados": PedidosAtrasados,
-    "AlmaIntegration": AlmaIntegration,
 }
 
 export const pagesConfig = {
