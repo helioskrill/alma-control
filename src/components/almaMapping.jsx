@@ -99,12 +99,32 @@ export const ALMA_TYPE_MAP = {
   CONFIGURACION:       "CONFIG",
   SETUP:               "CONFIG",
 
-  // Auth
+  // Auth (LoginActivity)
   LOGIN:               "AUTH",
   LOGON:               "AUTH",
   LOGOUT:              "AUTH",
   LOGOFF:              "AUTH",
   SCAN:                "AUTH",
+
+  // Activities por nombre (por si el campo operation_type envía el nombre de la Activity)
+  PICKINGACTIVITY:                      "PICKING",
+  PICKING1_LISTAARTICULOS:              "PICKING",
+  PICKING2_LISTAPARTIDASROPUESTAS:      "PICKING",
+  PICKING3_LISTALECTURAS:               "PICKING",
+  MOVIMIENTOSBOBINAACTIVITY:            "MOVE_BOBINA",
+  MOVIMIENTOSLOTEACTIVITY:              "MOVE_LOTE",
+  INVENTARIOSACTIVITY:                  "INVENTORY",
+  INVENTARIOSLISTALECTURAS:             "INVENTORY",
+  INVENTARIOSSELECCIONUBICACION:        "INVENTORY",
+  ENTRADASACTIVITY:                     "ENTRY",
+  ENTRADASLISTAARTICULOS:               "ENTRY",
+  ENTRADASLISTAPARTIDAS:                "ENTRY",
+  MERMASACTIVITY:                       "WASTE",
+  TARASACTIVITY:                        "TARE",
+  IMPRIMIRACTIVITY:                     "PRINT",
+  IMPRIMIRLISTABOBINAS:                 "PRINT",
+  CONFIGACTIVITY:                       "CONFIG",
+  LOGINACTIVITY:                        "AUTH",
 };
 
 /**
