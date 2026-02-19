@@ -50,15 +50,22 @@ export function computeCadence(sortedEvents) {
 /**
  * Compute the activity summary for a SINGLE operator.
  * Includes cadence metrics (ordersPerHour, avgIntervalMin).
+ * @param {string[]} [activityCategories] - categories that count as activity for gap detection.
+ *   If null/undefined, ALL events count (legacy behaviour).
  */
-export function computeOperatorSummary(operator, events, date, startTime, endTime, thresholdMinutes) {
+export function computeOperatorSummary(operator, events, date, startTime, endTime, thresholdMinutes, activityCategories) {
   const { shiftStart, shiftEnd } = buildShiftWindow(date, startTime, endTime);
 
-  const opEvents = events
+  const allOpEvents = events
     .filter((e) => e.operator_id === operator.id)
     .map((e) => ({ ...e, _ts: new Date(e.timestamp) }))
     .filter((e) => e._ts >= shiftStart && e._ts <= shiftEnd)
     .sort((a, b) => a._ts - b._ts);
+
+  // Events that count as activity (for gap detection)
+  const opEvents = activityCategories && activityCategories.length > 0
+    ? allOpEvents.filter((e) => activityCategories.includes(e.operation_category))
+    : allOpEvents;
 
   if (opEvents.length === 0) {
     return {
