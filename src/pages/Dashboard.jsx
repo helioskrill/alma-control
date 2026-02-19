@@ -7,6 +7,7 @@ import OperatorTable from "../components/dashboard/OperatorTable";
 import LiveIndicator from "../components/dashboard/LiveIndicator";
 import ActivityHeatmap from "../components/heatmap/ActivityHeatmap";
 import { computeOperatorSummaries, buildHeatmapData } from "../components/utils";
+import { ACTIVITY_PRESETS, DEFAULT_ACTIVITY_PRESET } from "../components/almaMapping";
 import LoadingSpinner from "../components/common/LoadingSpinner";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { LayoutList, Grid3X3 } from "lucide-react";
