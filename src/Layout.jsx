@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { createPageUrl } from "./utils";
-import { LayoutDashboard, UserCog, Menu, X, PackageX, Smartphone, TrendingUp, ShieldAlert } from "lucide-react";
+import { LayoutDashboard, UserCog, Menu, X, PackageX, Smartphone, TrendingUp, ShieldAlert, Plug } from "lucide-react";
 
 const navItems = [
   { name: "Dashboard",        label: "Dashboard",         icon: LayoutDashboard },
@@ -9,6 +9,7 @@ const navItems = [
   { name: "DevicePanel",      label: "PDAs",              icon: Smartphone },
   { name: "HistoryView",      label: "Histórico",         icon: TrendingUp },
   { name: "Anomalies",        label: "Anomalías",         icon: ShieldAlert },
+  { name: "AlmaIntegration",  label: "Integración ALMA",  icon: Plug },
   { name: "ManageData",       label: "Gestión de Datos",  icon: UserCog },
 ];
 
