@@ -161,7 +161,8 @@ if __name__ == "__main__":
     uvicorn.run("alma_proxy:app", host="0.0.0.0", port=PROXY_PORT, reload=False)
 `;
 
-const ENV_TEMPLATE = `SQL_SERVER=SRV2019
+const ENV_TEMPLATE = `# El proxy corre EN el propio SRV2019, así que el servidor es localhost
+SQL_SERVER=localhost
 SQL_DATABASE=Alma_AlonsoMercader
 SQL_USER=alma_readonly
 SQL_PASSWORD=TU_PASSWORD_AQUI
