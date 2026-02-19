@@ -21,8 +21,9 @@ export default function Dashboard() {
     startTime:       "07:00",
     endTime:         "15:00",
     threshold:       30,
-    autoRefresh:     false,
-    refreshInterval: 2,
+    autoRefresh:      false,
+    refreshInterval:  2,
+    activityPreset:   DEFAULT_ACTIVITY_PRESET,
   });
   const [view, setView] = useState("table");
 
