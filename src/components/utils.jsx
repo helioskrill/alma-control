@@ -102,13 +102,15 @@ export function computeOperatorSummary(operator, events, date, startTime, endTim
   }
   addGap(opEvents[opEvents.length - 1]._ts, shiftEnd);
 
-  const { ordersPerHour, avgIntervalMin } = computeCadence(opEvents);
+  const cadence = computeCadence(opEvents);
+  const ordersPerHour = cadence.ordersPerHour;
+  const avgIntervalMin = cadence.avgIntervalMin;
 
   return {
     operatorId:      operator.id,
     operatorName:    operator.name,
-    totalOrders:     allOpEvents.length,       // total all events
-    activityEvents:  opEvents.length,           // events that count for gap detection
+    totalOrders:     allOpEvents.length,
+    activityEvents:  opEvents.length,
     firstClose:      opEvents[0].timestamp,
     lastClose:       opEvents[opEvents.length - 1].timestamp,
     maxGap,
