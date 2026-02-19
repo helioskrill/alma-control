@@ -19,7 +19,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 load_dotenv()
 
-SQL_SERVER   = os.getenv("SQL_SERVER",   "SRV2019")
+SQL_SERVER   = os.getenv("SQL_SERVER",   "localhost")
 SQL_DATABASE = os.getenv("SQL_DATABASE", "Alma_AlonsoMercader")
 SQL_USER     = os.getenv("SQL_USER",     "")
 SQL_PASSWORD = os.getenv("SQL_PASSWORD", "")
