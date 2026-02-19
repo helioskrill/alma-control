@@ -54,6 +54,7 @@ import HistoryView from './pages/HistoryView';
 import ManageData from './pages/ManageData';
 import OperatorDetail from './pages/OperatorDetail';
 import PedidosAtrasados from './pages/PedidosAtrasados';
+import AlmaIntegration from './pages/AlmaIntegration';
 import __Layout from './Layout.jsx';
 
 
@@ -65,6 +66,7 @@ export const PAGES = {
     "ManageData": ManageData,
     "OperatorDetail": OperatorDetail,
     "PedidosAtrasados": PedidosAtrasados,
+    "AlmaIntegration": AlmaIntegration,
 }
 
 export const pagesConfig = {
