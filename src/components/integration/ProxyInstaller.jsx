@@ -267,9 +267,9 @@ export default function ProxyInstaller() {
 
         {/* Arquitectura visual */}
         <div className="mt-4 flex items-center gap-2 text-xs text-indigo-600 flex-wrap">
-          <span className="bg-white border border-indigo-200 rounded-lg px-3 py-1.5 font-mono">SRV2019\Alma_AlonsoMercader</span>
+          <span className="bg-white border border-indigo-200 rounded-lg px-3 py-1.5 font-mono">localhost\Alma_AlonsoMercader</span>
           <ChevronRight className="w-4 h-4 text-indigo-400" />
-          <span className="bg-white border border-indigo-200 rounded-lg px-3 py-1.5">PC Oficina :8099</span>
+          <span className="bg-emerald-100 border border-emerald-200 text-emerald-800 rounded-lg px-3 py-1.5 font-medium">SRV2019:8099 (proxy)</span>
           <ChevronRight className="w-4 h-4 text-indigo-400" />
           <span className="bg-indigo-600 text-white rounded-lg px-3 py-1.5">Base44</span>
         </div>
