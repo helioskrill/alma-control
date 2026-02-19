@@ -104,8 +104,6 @@ export function computeOperatorSummary(operator, events, date, startTime, endTim
 
   const { ordersPerHour, avgIntervalMin } = computeCadence(opEvents);
 
-  const { ordersPerHour, avgIntervalMin } = computeCadence(opEvents);
-
   return {
     operatorId:      operator.id,
     operatorName:    operator.name,
