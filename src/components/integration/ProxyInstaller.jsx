@@ -360,9 +360,9 @@ export default function ProxyInstaller() {
         <p className="text-xs text-gray-500">Una vez el proxy esté corriendo, accede a estos endpoints para descubrir qué tablas tienen los eventos:</p>
         <div className="space-y-2">
           {[
-            { url: "http://PC_OFICINA:8099/discovery/tables", desc: "Tablas candidatas a eventos" },
-            { url: "http://PC_OFICINA:8099/discovery/columns", desc: "Columnas de timestamp/usuario" },
-            { url: "http://PC_OFICINA:8099/events?date=2026-02-19", desc: "Prueba de eventos de hoy" },
+            { url: "http://SRV2019:8099/discovery/tables", desc: "Tablas candidatas a eventos" },
+            { url: "http://SRV2019:8099/discovery/columns", desc: "Columnas de timestamp/usuario" },
+            { url: "http://SRV2019:8099/events?date=2026-02-19", desc: "Prueba de eventos de hoy" },
           ].map(({ url, desc }) => (
             <div key={url} className="bg-gray-50 rounded-xl p-3 flex items-center gap-3">
               <div className="flex-1 min-w-0">
