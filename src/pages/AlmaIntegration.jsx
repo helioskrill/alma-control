@@ -277,6 +277,11 @@ export default function AlmaIntegration() {
           </div>
         </TabsContent>
 
+        {/* ─── Tab: Proxy Local ─────────────────────────────────────────────────── */}
+        <TabsContent value="proxy" className="mt-6">
+          <ProxyInstaller />
+        </TabsContent>
+
         {/* ─── Tab: Tipos de operación ──────────────────────────────────────────── */}
         <TabsContent value="types" className="mt-6">
           <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 max-w-2xl">
