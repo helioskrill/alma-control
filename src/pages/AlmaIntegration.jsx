@@ -130,6 +130,9 @@ export default function AlmaIntegration() {
           <TabsTrigger value="webhook" className="gap-1.5 text-xs">
             <Zap className="w-3.5 h-3.5" /> Webhook
           </TabsTrigger>
+          <TabsTrigger value="proxy" className="gap-1.5 text-xs">
+            <Server className="w-3.5 h-3.5" /> Proxy Local
+          </TabsTrigger>
           <TabsTrigger value="types" className="gap-1.5 text-xs">
             <Info className="w-3.5 h-3.5" /> Tipos de operación
           </TabsTrigger>
