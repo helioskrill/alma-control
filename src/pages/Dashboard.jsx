@@ -48,9 +48,14 @@ export default function Dashboard() {
     refetchInterval,
   });
 
+  const activityCategories = useMemo(() => {
+    const preset = ACTIVITY_PRESETS.find((p) => p.id === (filters.activityPreset ?? DEFAULT_ACTIVITY_PRESET));
+    return preset ? preset.categories : null;
+  }, [filters.activityPreset]);
+
   const summaries = useMemo(
-    () => computeOperatorSummaries(operators, events, filters.date, filters.startTime, filters.endTime, filters.threshold),
-    [operators, events, filters]
+    () => computeOperatorSummaries(operators, events, filters.date, filters.startTime, filters.endTime, filters.threshold, activityCategories),
+    [operators, events, filters, activityCategories]
   );
 
   const heatmapData = useMemo(
